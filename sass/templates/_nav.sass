@@ -1,0 +1,47 @@
+.nav 
+  padding: 25px 0
+
+  box-shadow: 5px 10px 30px rgba(0, 0, 0, 0.1)
+  &-mobile 
+    padding: 26px 0
+    display: none
+    @media screen and (max-width: 768px) 
+      display: block
+    &__container 
+      display: flex 
+      justify-content: space-between
+    &__address
+      display: flex 
+      align-items: center
+      svg 
+        &:first-of-type 
+          margin-right: 10px
+          max-width: 14px 
+          max-height: 20px
+
+          fill: $color-warning
+        &:last-of-type
+          margin-left: 8px
+          max-width: 15px 
+          max-height: 10px
+    &__phone 
+      svg 
+        max-width: 45px 
+        max-height: 45px
+  nav 
+    display: flex
+    justify-content: space-between
+    a
+      @include font(16, 19.36, 400)
+      color: $color-black
+
+      transition: color 0.4s
+      @media screen and (min-width: 992px) 
+        &:hover 
+          color: $color-primary
+  &-section 
+    @media screen and (max-width: 992px) 
+      a
+        font-size: 14px !important
+    @media screen and (max-width: 768px) 
+      display: none

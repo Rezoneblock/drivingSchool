@@ -1,0 +1,107 @@
+.answers
+  position: relative 
+
+  padding-top: 179px 
+  &::before 
+    content: ''
+
+    z-index: -1
+    position: absolute 
+    left: 0
+    top: 109px
+
+    width: 1058px 
+    height: 768px 
+
+    background-color: $color-primary
+    border-top-right-radius: 10px 
+    border-bottom-right-radius: 10px 
+  &::after 
+    content: ''
+
+    z-index: -1
+    position: absolute 
+    left: 7%
+    top: 444px
+
+    width: 674px 
+    height: 340px 
+
+    background-image: url(../img/answers-bg.png)
+    background-repeat: no-repeat
+
+  &__container 
+    display: flex
+
+  h2 
+    max-width: 440px
+
+  &__list 
+    margin-left: 106px
+    padding-bottom: 70px
+    display: flex 
+    flex-direction: column
+
+    list-style: none
+
+    transition: 0.4s
+  &__item 
+    position: relative 
+
+    padding: 30px 
+    padding-right: 65px
+    max-width: 740px 
+    width: 100%
+    display: flex 
+    flex-direction: column
+    
+    background-color: $color-gray
+    border-radius: 10px
+
+    transition: background-color 0.4s
+    cursor: pointer
+    user-select: none
+    &:not(:last-of-type)
+      margin-bottom: 30px
+    &.--active 
+      filter: drop-shadow(5px 10px 30px rgba(0, 0, 0, 0.1))
+      background-color: $color-light
+      .line 
+        background-color: $color-warning
+        &:first-of-type 
+          right: 35px 
+        &:last-of-type 
+          right: 35px 
+    p
+      @include font(20, 26, 700)
+      color: $color-black
+    .line 
+      position: absolute 
+
+      width: 15px 
+      height: 3px
+      
+      background-color: $color-primary
+
+      transition: 0.4s
+      &:first-of-type
+        right: 30px 
+        top: 35px
+        transform: rotate(-45deg)
+      &:last-of-type 
+        right: 40px 
+        top: 35px
+        transform: rotate(45deg)
+    
+  &__hidden 
+    display: none
+
+    @include font(16, 20.8, 400)
+    color: $color-secondary
+
+    overflow: hidden
+    &.--active 
+      margin-top: 15px 
+
+
+  

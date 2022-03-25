@@ -1,0 +1,80 @@
+.branches 
+  padding-top: 73px
+  @media screen and (max-width: 576px) 
+    background-color: $color-gray
+    .section__title 
+      text-align: left !important
+  &__wrapper 
+    margin-top: 70px 
+    padding: 70px 80px
+
+    text-align: center
+
+    background-color: $color-gray
+    border-radius: 10px
+    @media screen and (max-width: 768px) 
+      display: flex
+      flex-direction: column
+      align-items: center
+    @media screen and (max-width: 576px) 
+      padding: 0
+    
+
+  &__slider
+    overflow: hidden
+    @media screen and (max-width: 992px) 
+      justify-content: normal !important
+    .slick-track 
+      display: flex
+    .slick-list
+      max-width: 500px
+      @media screen and (max-width: 768px) 
+        max-width: 222px
+  
+  button 
+    padding: 15px 28px
+    @media screen and (max-width: 768px) 
+      margin: 0 !important
+      max-width: 100%
+      width: 100% 
+      &:first-of-type 
+        margin-bottom: 20px !important
+    &:last-of-type 
+      margin-left: 26px
+      padding: 15px 53px
+  ul 
+    margin-top: 42px
+    display: flex 
+    justify-content: center
+    gap: 29px
+
+    list-style: none
+    &[data-branch-type="racing"] 
+      display: none
+    li 
+      max-width: 260px 
+      width: 100%
+
+      text-align: center
+      @media screen and (max-width: 1400px) 
+        max-width: 210px 
+      a
+        width: 100%
+        display: flex
+        flex-direction: column
+        align-items: center
+
+      span 
+        margin-top: 14px
+
+        @include font(20, 26, 700)
+        color: $color-black
+        white-space: nowrap
+        @media screen and (max-width: 576px) 
+          font-size: 16px
+
+      svg 
+        max-width: 28px
+        max-height: 35px
+        path 
+          fill: $color-warning

@@ -1,0 +1,108 @@
+.burger
+  &-btn 
+    position: relative
+
+    display: none
+    margin-left: auto
+    margin-right: 3px
+    margin-top: -11px
+    width: 27px 
+    height: 13px
+
+    cursor: pointer
+    @media screen and (max-width: 768px) 
+      display: block
+    span 
+      position: absolute 
+
+      width: 27px
+      height: 2px 
+
+      background-color: $color-primary
+
+      transition: 0.4s
+      &:first-of-type 
+        top: 0
+      &:nth-child(2)
+        top: 50%
+      &:last-of-type 
+        top: 100%
+
+        width: 16px
+    &.--active 
+      span 
+        &:first-of-type 
+          transform: rotate(-45deg)
+        &:nth-child(2)
+          top: 0
+          transform: rotate(45deg)
+        &:last-of-type 
+          width: 0
+
+  &-menu 
+    z-index: 2
+    position: absolute 
+    top: 0
+    left: 0
+
+    display: none
+    padding: 30px 15px
+    margin-top: 75px
+    width: 100%
+    height: calc(100vh - 75px) 
+
+    background-color: $color-light
+    .nav 
+      background-color: $color-light
+      box-shadow: none
+      @media screen and (max-width: 576px) 
+        padding: 2px 0
+      nav 
+        padding-bottom: 30px
+        flex-wrap: wrap
+        a 
+          width: 25%
+          margin-bottom: 20px
+          @media screen and (max-width: 576px) 
+            width: 50%
+
+  &__links 
+    a:not(:last-of-type)
+      margin-right: 9px
+    svg 
+      max-width: 32px 
+      max-height: 32px
+    
+  &__phone 
+    margin-top: 40px
+    max-width: 165px
+    display: flex
+    align-items: flex-start
+    a
+      display: block
+      @include font(16, 19.36, 700)
+      color: $color-black
+      white-space: nowrap
+      &:not(:last-of-type)
+        margin-bottom: 10px
+    svg 
+      margin-top: 2px
+      margin-right: 10px
+      max-width: 18px 
+      max-height: 18px 
+
+      fill: $color-primary !important
+
+  &__email 
+    margin-top: 20px
+    display: flex
+    align-items: center
+
+    @include font(16, 19.36, 700)
+    color: $color-black
+    svg 
+      margin-right: 10px
+      max-width: 18px 
+      max-height: 15px
+      fill: $color-primary
+      

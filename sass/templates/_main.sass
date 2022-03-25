@@ -1,0 +1,105 @@
+.main
+  position: relative 
+
+  padding: 145px 0
+  &::before
+    content: ''
+
+    z-index: 1
+    position: absolute
+    bottom: 17px
+    right: 155px
+
+    width: 646px
+    height: 351px 
+
+    background-image: url(../img/main-bg.png)
+    background-size: contain
+    background-repeat: no-repeat
+  &::after 
+    content: ''
+
+    position: absolute
+    bottom: 0
+    right: 0
+
+    width: 725px
+    height: 460px 
+
+    border-top-left-radius: 10px
+    background-color: $color-primary
+  @media screen and (max-width: 1400px) 
+    padding: 75px 0
+    &::after 
+      width: 570px
+      height: 410px
+    &::before 
+      bottom: 60px 
+
+      width: 500px
+      height: 270px
+    .section__dsc 
+      max-width: 400px
+  @media screen and (max-width: 1200px) 
+    &::after 
+      bottom: 50%
+      transform: translateY(50%)
+      width: 357px
+      height: 300px
+
+      border-bottom-left-radius: 10px
+    &::before 
+      right: 30px
+      bottom: 50%
+      transform: translateY(50%)
+      
+      width: 360px
+      height: 220px
+  @media screen and (max-width: 768px) 
+    &::before 
+      right: 0px
+      bottom: 50%
+
+      width: 220px 
+      height: 158px
+    &::after 
+      bottom: 50%
+
+      width: 170px
+      height: 238px
+  @media screen and (max-width: 576px) 
+    padding-top: 0
+    padding-bottom: 250px
+    &::before 
+      bottom: 91px
+      right: 5%
+
+      width: 290px 
+      height: 158px
+    &::after 
+      bottom: 93px
+
+      width: 271px
+      height: 238px
+
+      border-bottom-left-radius: 0
+    h2 
+      font-size: 25px  !important
+      line-height: 32.5px !important
+    p
+      font-size: 16px 
+      line-height: 20.8px
+    &__btn 
+      max-width: 100%
+      width: 100%
+  
+
+  h2, p 
+    max-width: 520px
+  h2 
+    @include font(50, 64, 700)
+  p 
+    margin: 20px 0
+  
+  &__btn 
+    padding: 15px 47.5px

@@ -1,0 +1,22 @@
+.marquee 
+  width: 100%
+  overflow: hidden
+  padding: 20px 0
+
+  @include font(30, 36.31, 700)
+  color: $color-light
+  text-transform: uppercase
+
+  background-color: $color-secondary
+  cursor: default
+  user-select: none
+  @media screen and (max-width: 576px) 
+    margin-top: 26px
+    font-size: 20px 
+    line-height: 24.2px
+
+  .slick
+    &-track 
+      display: flex
+    &-slide 
+      padding: 0 15px

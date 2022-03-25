@@ -1,0 +1,101 @@
+.header 
+  padding: 31px 0
+
+  background-color: $color-gray
+  @media screen and (max-width: 768px) 
+    padding: 29px 0
+
+    background-color: $color-light
+    filter: drop-shadow(5px 10px 30px rgba(0, 0, 0, 0.1))
+
+  &__container 
+    display: flex 
+    align-items: center
+
+  &__info 
+    margin-left: auto 
+    margin-right: 76px
+    padding-left: 12px
+    max-width: 750px
+    width: 100%
+    display: flex
+    justify-content: space-between
+    @media screen and (max-width: 1200px) 
+      max-width: 520px
+      margin: 0 auto
+    @media screen and (max-width: 768px) 
+      display: none
+    a
+      @include font(16, 19.36, 700)
+      color: $color-black
+
+  &__address, &__email, &__phone, 
+    display: flex
+    align-items: center
+    svg 
+      margin-right: 10px
+
+      fill: $color-warning
+      @media screen and (max-width: 1200px) 
+        margin-right: 5px 
+
+    
+
+  &__address
+    @include font(16, 19.36, 400)
+    color: $color-secondary
+
+    background-color: $color-gray
+    border: none
+    appearance: none
+
+    cursor: pointer
+    @media screen and (max-width: 1200px) 
+      font-size: 12px  
+    svg 
+      max-width: 14px 
+      max-height: 18px
+      &:last-of-type 
+        margin-right: 0
+        margin-left: 8px
+        max-width: 12px 
+        max-height: 10px
+
+        fill: none
+
+
+  &__phone 
+    svg 
+      max-width: 18px 
+      max-height: 18px
+    a
+      @media screen and (max-width: 1200px) 
+        font-size: 12px  
+      
+      &:first-of-type 
+        margin-right: 12px
+        @media screen and (max-width: 1200px) 
+          margin-right: 4px
+
+  &__email 
+    margin-left: 73px 
+    margin-right: 56px
+    @media screen and (max-width: 1200px) 
+      margin: 0
+
+      font-size: 12px !important
+    
+    svg 
+      max-width: 18px 
+      max-height: 15px
+
+  &__btn 
+    padding: 15px 28px
+    @media screen and (max-width: 992px) 
+      max-width: 130px
+      padding: 12px 10px
+
+      font-size: 12px
+    @media screen and (max-width: 768px) 
+      display: none
+

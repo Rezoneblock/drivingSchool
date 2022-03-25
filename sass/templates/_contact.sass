@@ -1,0 +1,40 @@
+.contact
+  position: relative 
+
+  padding-top: 44px
+  &::before 
+    content: ''
+
+    z-index: -1
+    position: absolute 
+    top: -2px
+    left: 0
+
+    width: 1372px
+    height: 560px
+
+    background-color: $color-primary
+    border-top-right-radius: 10px
+  &::after 
+    content: ''
+
+    z-index: 1
+    position: absolute 
+    top: 167px
+    left: 134px
+
+    width: 971px
+    height: 385px
+
+    background-image: url(../img/contact-bg.png)
+    background-repeat: no-repeat
+
+  &__container 
+    display: flex 
+    justify-content: space-between
+
+  &__title 
+    margin-top: 20px
+
+  &__form 
+    margin-right: -70px

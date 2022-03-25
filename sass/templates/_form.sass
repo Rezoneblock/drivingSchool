@@ -1,0 +1,111 @@
+.form
+  max-width: 481px 
+  padding: 70px
+
+  background-color: $color-gray
+  border-top-left-radius: 10px
+  border-top-right-radius: 10px
+  
+  &__title 
+    margin-bottom: 30px 
+
+    max-width: 341px 
+
+    @include font(30, 39, 700)
+    color: $color-black
+
+  &__label 
+    position: relative
+    &::after 
+      content: ''
+
+      position: absolute 
+      bottom: -8px
+      left: 0
+
+      width: 100%
+      height: 1px
+
+      background-color: #989898
+
+      transition: 0.2s
+    @media screen and (min-width: 992px) 
+      &:hover
+        &::after
+          height: 2px 
+
+          background-color: $color-primary
+        input::placeholder 
+          color: $color-primary
+
+  &__input
+    margin: 13px 0
+
+    @include font(16, 20.8, 600)
+    color: $color-primary
+
+    background-color: transparent
+    border: none 
+
+    appearance: none
+    transition: 0.2s
+    &::placeholder 
+      @include font(15, 19.5, 400)
+      color: #989898
+
+  &__policy 
+    margin-top: 18px 
+
+    display: flex 
+    align-items: center
+    input 
+      width: 0 
+      height: 0 
+      opacity: 0
+      visibility: none
+      &:checked + label
+        background-color: $color-primary
+
+    label 
+      position: relative
+
+      width: 20px 
+      height: 20px 
+
+      background-color: $color-light
+
+      cursor: pointer
+
+      transition: 0.4s
+      &::after 
+        content: ''
+
+        position: absolute 
+        top: 50% 
+        left: 50% 
+        transform: translate(-50%, -50%)
+
+        width: 14px
+        height: 10px
+
+        background-image: url(../assets/check.svg)
+        background-repeat: no-repeat
+      
+    span 
+      margin-left: 10px 
+
+      @include font(13, 16.9, 600)
+      color: $color-secondary
+      a 
+        color: $color-primary
+
+  & > button.--callback 
+    margin-top: 40px 
+
+    padding: 15px 21.5px
+
+    
+
+
+      
+    

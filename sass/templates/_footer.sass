@@ -1,0 +1,58 @@
+.footer
+  padding-top: 125px 
+  padding-bottom: 140px
+  background-color: $color-secondary
+  .logo
+    color: $color-light
+  &__top 
+    display: flex 
+    .nav 
+      margin-left: 140px
+      margin-top: -9px
+      width: 100%
+
+      box-shadow: none
+      a 
+        color: $color-light
+
+  &__bottom 
+    display: flex
+    margin-top: 45px
+    small 
+      @include font(15, 19.5, 4)
+      color: #989898
+
+  &__info 
+    margin-left: 140px
+    margin-top: 10px
+    display: flex 
+    align-items: center
+
+  &__phone 
+    display: flex
+    align-items: center
+    a
+      @include font(20, 26, 700)
+      color: $color-light
+      &:first-of-type 
+        margin-right: 14px
+    svg 
+      margin-right: 10px
+      max-width: 23px 
+      max-height: 23px
+
+      fill: $color-primary
+
+  &__email 
+    margin-left: 63px 
+    margin-right: 143px 
+
+    @include font(30, 39, 700)
+    color: $color-primary
+
+  &__links 
+    a:not(:last-of-type)
+      margin-right: 14px
+    svg 
+      max-width: 32px 
+      max-height: 32px
