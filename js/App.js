@@ -17,6 +17,7 @@ $(document).ready(function () {
 
   // branches switch
   $('[data-branch-set-type]').on('click', (event) => {
+    // just read names of variables and methods
     let target = event.target;
     let setThisType = $(target).attr('data-branch-set-type');
     let setThisList = $(`[data-branch-type=${setThisType}]`);
@@ -32,17 +33,63 @@ $(document).ready(function () {
   });
 
   // branches slider
-  let mobile = window.matchMedia('(min-width: 0px) and (max-width: 992px)');
-  if (mobile.matches) {
-    console.log(1);
-    $('.branches__slider').slick({
-      infinite: false,
-      dots: false,
-      arrows: false,
-      // slidesToScroll: 1,
-      // slidesToShow: 1,
-      variableWidth: true,
-    });
+  function setBranchesSlider() {
+    $('.branches__slider')
+      .not('.slick-initialized')
+      .slick({
+        infinite: false,
+        dots: false,
+        arrows: false,
+        slidesToShow: 2,
+        slidesToScroll: 2,
+        variableWidth: true,
+        initialSlide: 0,
+        dots: true,
+        customPaging: function (slider, i) {
+          let len = slider.$slides.length;
+          console.log();
+          if ($(window).width() < 576) {
+            return `<span class="current">${i + 1}</span> / <span>${len}</span>`;
+          } else {
+            // logic for dots when more then 2 slides
+            if (len > 2) {
+              // first item
+              if (i == 0) {
+                i = 1;
+              } // average item
+              else if (i * 2 + 1 !== len) {
+                i++;
+              } // last item
+              else {
+                return `<span class="current">${len}</span> / <span>${len}</span>`;
+              }
+              return `<span class="current">${i * 2}</span> / <span>${len}</span>`;
+            }
+          }
+        },
+        responsive: [
+          {
+            breakpoint: 576,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1,
+            },
+          },
+        ],
+      });
+  }
+  // init slider on resize && window.width <= 992px
+  $(window).resize(function () {
+    var $windowWidth = $(window).width();
+    if ($windowWidth <= 992) {
+      setBranchesSlider();
+    } else {
+      $('.branches__slider.slick-initialized').slick('unslick');
+    }
+  });
+  // init slider on window.width <= 992px
+  if ($(window).width() <= 992) {
+    setBranchesSlider();
   }
 
   // trainers slider
@@ -62,6 +109,18 @@ $(document).ready(function () {
       el: '.trainer__slider-pagination',
       type: 'fraction',
     },
+    breakpoints: {
+      0: {
+        slidesPerView: 1,
+        slidesPerScroll: 1,
+        allowTouchMove: true,
+        grabCursor: true,
+      },
+      992: {
+        slidesPerView: 3.5,
+        allowTouchMove: false,
+      },
+    },
   });
   const trainersDsc = new Swiper('.trainer__slider-dsc', {
     direction: 'horizontal',
@@ -71,7 +130,19 @@ $(document).ready(function () {
     initialSlide: 0,
     slidesPerView: 'auto',
     allowTouchMove: false,
+    breakpoints: {
+      0: {
+        slidesPerView: 1,
+        slidesPerScroll: 1,
+        allowTouchMove: true,
+        grabCursor: true,
+      },
+      992: {
+        allowTouchMove: false,
+      },
+    },
   });
+  // sync both slider's
   function syncSliders(index) {
     trainersPhotos.slideTo(index);
     trainersDsc.slideTo(index);
@@ -81,6 +152,11 @@ $(document).ready(function () {
   });
   trainersDsc.on('slideChange', () => {
     syncSliders(trainersDsc.activeIndex);
+  });
+
+  // trainer mobile hidden text
+  $('.trainer__mobile-dsc > button').on('click', () => {
+    $('.trainer__mobile-dsc > span.--hidden').slideToggle();
   });
 
   // answers
@@ -114,10 +190,14 @@ $(document).ready(function () {
   // burger
   $('.burger-btn').on('click', function () {
     if ($('.burger-menu').hasClass('--active')) {
+      // hide burger
       $(this).removeClass('--active');
       $('.burger-menu').removeClass('--active');
       $('.burger-menu').hide();
+      $('body').removeAttr('style');
     } else {
+      // show burger
+      $('body').css('overflow-y', 'hidden');
       $(this).addClass('--active');
       $('.burger-menu').addClass('--active');
       $('.burger-menu').show();

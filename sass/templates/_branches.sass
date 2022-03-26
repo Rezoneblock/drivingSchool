@@ -1,10 +1,14 @@
 .branches 
-  padding-top: 73px
+  padding-top: 70px
   @media screen and (max-width: 576px) 
+    padding-bottom: 82px 
+
     background-color: $color-gray
     .section__title 
       text-align: left !important
   &__wrapper 
+    position: relative
+
     margin-top: 70px 
     padding: 70px 80px
 
@@ -13,23 +17,17 @@
     background-color: $color-gray
     border-radius: 10px
     @media screen and (max-width: 768px) 
+      padding: 30px
+      padding-bottom: 60px
       display: flex
       flex-direction: column
       align-items: center
     @media screen and (max-width: 576px) 
+      margin-top: 80px
       padding: 0
-    
 
-  &__slider
-    overflow: hidden
-    @media screen and (max-width: 992px) 
-      justify-content: normal !important
-    .slick-track 
-      display: flex
-    .slick-list
-      max-width: 500px
-      @media screen and (max-width: 768px) 
-        max-width: 222px
+  ul 
+    list-style: none
   
   button 
     padding: 15px 28px
@@ -42,22 +40,53 @@
     &:last-of-type 
       margin-left: 26px
       padding: 15px 53px
-  ul 
+  &__slider 
     margin-top: 42px
+    width: 100%
     display: flex 
     justify-content: center
     gap: 29px
 
     list-style: none
+    overflow: hidden
+    .slick
+      &-track 
+        display: flex
+        width: 100% !important
+      &-list 
+        width: 100%
+      &-dots 
+        position: absolute
+        left: 15px
+        bottom: 15px
+        @media screen and (max-width: 576px) 
+          left: 0
+          bottom: -42px
+        li 
+          display: none
+          .current
+            @include font(20, 26, 700)
+            color: $color-warning
+          span 
+            margin: 0
+
+            @include font(16, 20.8, 700)
+            color: $color-black
+        .slick-active 
+          display: flex
+          align-items: center
     &[data-branch-type="racing"] 
       display: none
     li 
-      max-width: 260px 
-      width: 100%
+      width: 25% 
+      // width: 100%
 
       text-align: center
-      @media screen and (max-width: 1400px) 
-        max-width: 210px 
+      @media screen and (max-width: 992px) 
+        max-width: 100%
+        min-width: 50%
+      @media screen and (max-width: 576px) 
+        min-width: 100%
       a
         width: 100%
         display: flex

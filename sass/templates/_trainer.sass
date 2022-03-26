@@ -1,7 +1,7 @@
 .trainer
   position: relative 
 
-  padding: 40px 0
+  padding-bottom: 40px
 
   overflow: hidden
   &::before 
@@ -16,6 +16,10 @@
     height: 210px 
 
     background-color: $color-primary
+    @media screen and (max-width: 1200px)
+      width: 628px
+    @media screen and (max-width: 992px)
+      display: none
   &::after 
     content: ''
 
@@ -28,15 +32,71 @@
     height: 132px 
 
     background-color: $color-gray
+    @media screen and (max-width: 1400px)
+      display: none
+  .section
+    &__title
+      margin-top: 40px
+      margin-bottom: 110px 
+      max-width: 363px
+      @media screen and (max-width: 992px)
+        margin-bottom: 50px
+        max-width: 100%
+        order: -1
 
-  h2
-    margin-bottom: 110px 
-    max-width: 363px
-  p
-    max-width: 630px
+        color: $color-black
+      @media screen and (max-width: 576px)
+        margin-top: 26px 
+        margin-bottom: 41px
+    &__dsc
+      max-width: 630px
     
-    line-height: 22.4px
+      line-height: 22.4px
+      @media screen and (max-width: 1400px)
+        max-width: 450px
+      @media screen and (max-width: 992px)
+        display: none
+  &__wrapper 
+    display: flex
+    align-items: flex-start
+    @media screen and (max-width: 992px)
+      align-items: center
+      flex-direction: column
+    @media screen and (max-width: 576px)
+      align-items: flex-start
+  &__mobile-dsc 
+    max-width: 400px 
+    display: none 
+    flex-direction: column
 
+    text-align: center
+    @media screen and (max-width: 576px)
+      text-align: left
+    span 
+      @include font(16, 22, 400)
+      color: $color-secondary
+    & span.--hidden 
+      margin-bottom: 20px
+      display: none
+    @media screen and (max-width: 992px) 
+      display: flex
+    button 
+      margin: 20px auto
+
+      @include font(16, 20.8, 600)
+      color: $color-primary
+
+      border: none 
+      background-color: $color-light 
+
+      cursor: pointer
+      @media screen and (max-width: 576px)
+        margin: 14px 0
+
+        text-align: left
+      svg 
+        max-width: 14px 
+        max-height: 18px
   &__slider
     &-pagination 
       position: absolute 
@@ -47,6 +107,11 @@
       color: $color-black
       
       user-select: none
+      @media screen and (max-width: 1400px)
+        top: 400px
+        left: 200px !important
+      @media screen and (max-width: 576px)
+        top: 235px !important
       .swiper-pagination
         &-current 
           margin-right: -5px 
@@ -55,6 +120,10 @@
           color: $color-warning
         &-total 
           margin-left: -5px 
+      @media screen and (max-width: 992px)
+        top: 330px 
+        left: 240px !important
+        z-index: 2
     &-btn 
       &-prev, &-next 
         z-index: 1
@@ -67,37 +136,84 @@
 
         cursor: pointer
         user-select: none
+        @media screen and (max-width: 1400px)
+          top: 415px
       &-prev 
         left: calc(58% - 40px)
+        @media screen and (max-width: 1400px)
+          left: 0
       &-next
         left: calc(58% + 30px)
+        @media screen and (max-width: 1400px)
+          left: 80px
     &-dsc 
-      position: absolute 
-      top: 0 
-      left: 696px
-
       width: 280px
       height: 210px
 
       overflow: hidden 
+      @media screen and (max-width: 1400px)
+        margin-left: 100px
+        width: 250px 
+      @media screen and (max-width: 1200px)
+        margin-left: 0
+      @media screen and (max-width: 992px)
+        z-index: 2
+
+        margin-top: -10px
+        width: 290px
+        order: 3
+
+        border-bottom-left-radius: 10px
+        border-bottom-right-radius: 10px
+        @media screen and (max-width: 576px)
+          height: 156px
     &-photos
       z-index: 1
       position: absolute 
       top: 0 
-      right: 0 
+      left: 49.9% 
       
-      max-width: 890px 
+      max-width: 1000px 
       
       overflow: hidden
+      @media screen and (max-width: 1400px)
+        left: 728px
+
+        padding-bottom: 50px
+      @media screen and (max-width: 1200px)
+        left: 628px
+      @media screen and (max-width: 992px)
+        z-index: 1
+        position: relative 
+        left: 0
+
+        padding: 0
+        max-width: 290px
+        order: 2
+      @media screen and (max-width: 576px)
+        margin-top: 26px
+        height: 290px !important
       .swiper-slide
         width: 300px 
+        @media screen and (max-width: 992px)
+          max-width: 290px
+          img 
+            border-top-left-radius: 10px !important
         img 
           width: 190px 
           height: 200px
+          @media screen and (max-width: 992px)
+            width: 300px !important
+            height: 385px !important
+          @media screen and (max-width: 576px)
+            height: 290px !important
+            width: 290px !important
         &-active 
           width: 300px !important
           height: 385px !important
           margin-right: 80px !important
+          @media screen and (max-width: 992px)
+            margin-right: 0 !important
           img 
             height: 385px 
             width: 300px
@@ -117,6 +233,8 @@
     text-align: center
 
     background-color: $color-gray
+    @media screen and (max-width: 576px)
+      padding: 20px
   
   &__exp 
     display: block 
@@ -126,6 +244,8 @@
     &:not(:last-of-type)
       margin-top: 20px 
       margin-bottom: 10px
+      @media screen and (max-width: 576px)
+        margin-top: 10px
       
   &__name 
     @include font(20, 26, 700)
