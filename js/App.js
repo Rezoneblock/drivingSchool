@@ -1,3 +1,5 @@
+// dependencies: slick-slider, swiper-slider.
+
 $(document).ready(function () {
   // marquee
   $('.marquee').slick({
@@ -47,7 +49,6 @@ $(document).ready(function () {
         dots: true,
         customPaging: function (slider, i) {
           let len = slider.$slides.length;
-          console.log();
           if ($(window).width() < 576) {
             return `<span class="current">${i + 1}</span> / <span>${len}</span>`;
           } else {

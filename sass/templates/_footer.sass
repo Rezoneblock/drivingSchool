@@ -2,38 +2,97 @@
   padding-top: 125px 
   padding-bottom: 140px
   background-color: $color-secondary
+  @media screen and (max-width: 1200px) 
+    padding: 50px 0
+  @media screen and (max-width: 576px) 
+    padding-top: 93px
   .logo
     color: $color-light
+    &::before 
+      display: none
+      @media screen and (max-width: 576px) 
+        display: block
   &__top 
     display: flex 
+    @media screen and (max-width: 992px)
+      flex-direction: column
+      align-items: center
+    @media screen and (max-width: 576px) 
+      align-items: flex-start
     .nav 
       margin-left: 140px
       margin-top: -9px
       width: 100%
 
       box-shadow: none
+      @media screen and (max-width: 992px)
+        margin: 0
       a 
         color: $color-light
 
   &__bottom 
     display: flex
     margin-top: 45px
+    @media screen and (max-width: 1200px) 
+      margin: 0
+    @media screen and (max-width: 992px)
+      flex-direction: column 
     small 
       @include font(15, 19.5, 4)
       color: #989898
+      white-space: nowrap
+      @media screen and (max-width: 992px)
+        text-align: center
+      @media screen and (max-width: 576px) 
+        text-align: left
 
+  &__nav 
+      nav
+        @media screen and (max-width: 1200px) 
+          flex-wrap: wrap
+          text-align: center
+          a 
+            margin-bottom: 22px
+            width: 50%
+      @media screen and (max-width: 576px) 
+        margin-top: 29px !important
+        nav 
+          text-align: left
+          a 
+            width: 44%
   &__info 
     margin-left: 140px
     margin-top: 10px
     display: flex 
     align-items: center
-
+    @media screen and (max-width: 1400px) 
+      width: 100%
+    @media screen and (max-width: 1200px) 
+      margin-left: 50px
+    @media screen and (max-width: 992px)
+      margin: 0
+      flex-direction: column 
+      order: -1
+    @media screen and (max-width: 576px) 
+      align-items: flex-start
   &__phone 
     display: flex
     align-items: center
+    @media screen and (max-width: 1200px) 
+      align-items: flex-start
     a
       @include font(20, 26, 700)
       color: $color-light
+      white-space: nowrap
+      @media screen and (max-width: 1200px) 
+        display: block
+      @media screen and (max-width: 992px)
+        &:not(:last-of-type)
+          margin-bottom: 11px
+      @media screen and (max-width: 576px)
+        @include font(16, 19.36, 700)
+        &:first-of-type 
+          margin-top: 5px
       &:first-of-type 
         margin-right: 14px
     svg 
@@ -42,6 +101,10 @@
       max-height: 23px
 
       fill: $color-primary
+      @media screen and (max-width: 1200px) 
+        margin-top: 3px
+      @media screen and (max-width: 576px)
+        margin-right: 2px
 
   &__email 
     margin-left: 63px 
@@ -49,10 +112,21 @@
 
     @include font(30, 39, 700)
     color: $color-primary
-
+    @media screen and (max-width: 1400px) 
+      margin-right: auto
+    @media screen and (max-width: 992px)
+      margin: 40px 0
+    @media screen and (max-width: 576px)
+      @include font(20, 26, 700)
   &__links 
-    a:not(:last-of-type)
-      margin-right: 14px
+    @media screen and (max-width: 992px)
+      margin-bottom: 44px
+      order: -1
+    @media screen and (max-width: 576px)
+      margin-bottom: 33px
+    a
+      &:not(:last-of-type)
+        margin-right: 14px
     svg 
       max-width: 32px 
       max-height: 32px
