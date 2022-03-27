@@ -136,8 +136,13 @@
 
         cursor: pointer
         user-select: none
+        svg path
+          transition: 0.4s
         @media screen and (max-width: 1400px)
           top: 415px
+        @media screen and (min-width: 768px)
+          svg:hover path
+            fill: $color-warning
       &-prev 
         left: calc(58% - 40px)
         @media screen and (max-width: 1400px)

@@ -10,6 +10,46 @@
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
   </head>
   <body>
+    <div class="modal">
+      <div class="modal__overlay"></div>
+      <form action="POST" class="form modal__form">
+          <h3 class="form__title">Оставьте свои контактные данные</h3>
+
+          <label class="form__label"><input class="form__input name" type="text" placeholder="Имя"></label>
+          <label class="form__label"><input class="form__input phone" type="text" placeholder="Телефон"></label>
+          
+
+          <div class="form__policy">
+            <input type="checkbox" id="checkbox" required checked>
+            <label for="checkbox"></label>
+            <span>Я согласен <a href="#">с политикой конфиденциальности</a></span>
+          </div>
+
+          <button class="btn --callback form__btn">Отправить заявку</button>
+        </form>
+    </div>
+
+    <div class="gratitude">
+      <div class="gratitude__overlay"></div>
+      <div class="gratitude__wrapper">
+        <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="60" cy="60" r="60" fill="#2B8E53"/><path d="M86.731 31.803a4.97 4.97 0 0 0-6.883 1.47l-27.89 43.063-13.602-12.598a4.978 4.978 0 0 0-3.574-1.32 4.973 4.973 0 0 0-3.46 1.596 4.99 4.99 0 0 0 .276 7.045l17.86 16.54s.512.442.749.597a4.97 4.97 0 0 0 6.886-1.47L88.198 38.7a4.988 4.988 0 0 0-1.467-6.896Z" fill="#fff"/></svg>
+        <h3 class="gratitude__title">Ваша заявка отправлена!</h3>
+        <p class="gratitude__dsc">Специалисты свяжутся с вами в ближайшее время и помогут в оформлении записи</p>
+        <div class="gratitude__close">
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="entry-plan">
+      <div class="entry-plan__overlay"></div>
+      <div class="entry-plan__slider">
+        <img src="img/entry-plan.jpg" alt="entry-plan1">
+        <img src="img/entry-plan.jpg" alt="entry-plan2">
+      </div>
+    </div>
+
     <div class="burger-menu">
       <div class="nav">
         <nav>
@@ -64,7 +104,7 @@
         </div>
 
         <div class="header__info">
-          <div class="header__address">
+          <div class="header__address address-hidden-btn">
             <svg viewBox="0 0 15 18" fill="none">
               <path
                 d="M14.417 4.46a9.272 9.272 0 0 0-.308-.703c-.616-1.279-1.517-2.224-2.705-2.837A8.002 8.002 0 0 0 7.687 0C6.015 0 4.505.49 3.156 1.467 1.806 2.446 1.015 3.822.78 5.596v.743l.044.196v.274c.059.417.213.893.462 1.428.25.535.476.965.682 1.291.205.326.535.822.99 1.487.454.665.755 1.102.901 1.311.85 1.278 2.156 3.17 3.916 5.674.234-.34 1.04-1.565 2.42-3.678.058-.079.168-.235.33-.47.16-.235.27-.417.329-.548.059-.078.154-.189.286-.332.132-.144.227-.255.286-.333.205-.339.652-.985 1.342-1.937.689-.952 1.195-1.754 1.517-2.406.323-.653.484-1.292.484-1.918v-.86c0-.288-.117-.64-.352-1.057ZM7.731 8.336c-1.144 0-1.936-.496-2.376-1.487a2.891 2.891 0 0 1-.044-.587v-.509c0-.652.25-1.154.748-1.506.499-.353 1.085-.529 1.76-.529.733 0 1.341.222 1.825.666.484.443.726.99.726 1.643 0 .652-.256 1.2-.77 1.644-.513.443-1.136.665-1.87.665Z"
@@ -80,6 +120,13 @@
                 stroke-linejoin="round"
               />
             </svg>
+            <div class="address-hidden">
+              <a href="#">Ул. Ушинского, 5–1</a>
+              <a href="#">Ул. Руднева, 22–1</a>
+              <a href="#">Ул. Бабушкина, 119</a>
+              <a href="#">Ул. Репищева, 14</a>
+              <a href="#">Пр. Солидарности, 11–1</a>
+            </div>
           </div>
 
           <a class="header__email" href="mailto:info@asp.ru">
@@ -102,7 +149,7 @@
           </div>
         </div>
 
-        <button class="btn header__btn --callback">Заказать звонок</button>
+        <button class="btn header__btn --callback show-modal">Заказать звонок</button>
 
         <div class="burger-btn">
           <span></span>
@@ -129,7 +176,7 @@
 
     <div class="nav-mobile">
       <div class="container nav-mobile__container">
-        <div class="nav-mobile__address">
+        <div class="nav-mobile__address address-hidden-btn">
           <svg viewBox="0 0 15 18" fill="none">
             <path
               d="M14.417 4.46a9.272 9.272 0 0 0-.308-.703c-.616-1.279-1.517-2.224-2.705-2.837A8.002 8.002 0 0 0 7.687 0C6.015 0 4.505.49 3.156 1.467 1.806 2.446 1.015 3.822.78 5.596v.743l.044.196v.274c.059.417.213.893.462 1.428.25.535.476.965.682 1.291.205.326.535.822.99 1.487.454.665.755 1.102.901 1.311.85 1.278 2.156 3.17 3.916 5.674.234-.34 1.04-1.565 2.42-3.678.058-.079.168-.235.33-.47.16-.235.27-.417.329-.548.059-.078.154-.189.286-.332.132-.144.227-.255.286-.333.205-.339.652-.985 1.342-1.937.689-.952 1.195-1.754 1.517-2.406.323-.653.484-1.292.484-1.918v-.86c0-.288-.117-.64-.352-1.057ZM7.731 8.336c-1.144 0-1.936-.496-2.376-1.487a2.891 2.891 0 0 1-.044-.587v-.509c0-.652.25-1.154.748-1.506.499-.353 1.085-.529 1.76-.529.733 0 1.341.222 1.825.666.484.443.726.99.726 1.643 0 .652-.256 1.2-.77 1.644-.513.443-1.136.665-1.87.665Z"
@@ -145,11 +192,18 @@
               stroke-linejoin="round"
             />
           </svg>
+          <div class="address-hidden">
+              <a href="#">Ул. Ушинского, 5–1</a>
+              <a href="#">Ул. Руднева, 22–1</a>
+              <a href="#">Ул. Бабушкина, 119</a>
+              <a href="#">Ул. Репищева, 14</a>
+              <a href="#">Пр. Солидарности, 11–1</a>
+            </div>
         </div>
 
-        <a href="tel:8129999999" class="nav-mobile__phone">
+        <div class="nav-mobile__phone --callback show-modal">
           <svg viewBox="0 0 45 45" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="45" height="45" rx="10" fill="#2B8E53"/><path d="M24.847 23.845c-2.375 2.373-5.127 4.644-6.215 3.556-1.556-1.555-2.516-2.911-5.95-.152-3.43 2.757-.795 4.596.713 6.102 1.74 1.74 8.229.093 14.642-6.317 6.412-6.412 8.055-12.898 6.313-14.639-1.508-1.509-3.339-4.143-6.097-.712-2.76 3.43-1.404 4.39.155 5.948 1.083 1.087-1.187 3.839-3.561 6.214Z" fill="#fff"/></svg>
-        </a>
+        </div>
       </div>
       
     </div>
@@ -163,7 +217,7 @@
         <p class="section__dsc">
           Проходите обучение как вам удобно — в группе выходного дня, по вечерам или онлайн
         </p>
-        <button class="btn main__btn --callback">Записаться</button>
+        <button class="btn main__btn --callback show-modal">Записаться</button>
       </div>
     </section>
 
@@ -421,7 +475,7 @@
     <section class="section map">
       <div class="container map__container">
         <h2 class="section__title --center">Как нас найти</h2>
-        <div class="map__select">
+        <div class="map__select address-hidden-btn">
           <svg viewBox="0 0 15 18" fill="none">
             <path
               d="M14.417 4.46a9.272 9.272 0 0 0-.308-.703c-.616-1.279-1.517-2.224-2.705-2.837A8.002 8.002 0 0 0 7.687 0C6.015 0 4.505.49 3.156 1.467 1.806 2.446 1.015 3.822.78 5.596v.743l.044.196v.274c.059.417.213.893.462 1.428.25.535.476.965.682 1.291.205.326.535.822.99 1.487.454.665.755 1.102.901 1.311.85 1.278 2.156 3.17 3.916 5.674.234-.34 1.04-1.565 2.42-3.678.058-.079.168-.235.33-.47.16-.235.27-.417.329-.548.059-.078.154-.189.286-.332.132-.144.227-.255.286-.333.205-.339.652-.985 1.342-1.937.689-.952 1.195-1.754 1.517-2.406.323-.653.484-1.292.484-1.918v-.86c0-.288-.117-.64-.352-1.057ZM7.731 8.336c-1.144 0-1.936-.496-2.376-1.487a2.891 2.891 0 0 1-.044-.587v-.509c0-.652.25-1.154.748-1.506.499-.353 1.085-.529 1.76-.529.733 0 1.341.222 1.825.666.484.443.726.99.726 1.643 0 .652-.256 1.2-.77 1.644-.513.443-1.136.665-1.87.665Z"
@@ -437,6 +491,11 @@
               stroke-linejoin="round"
             />
           </svg>
+          <div class="address-hidden">
+              <a href="#">Невский район</a>
+              <a href="#">Выборгский район</a>
+              <a href="#">Приморский район</a>
+            </div>
         </div>
         <div class="map__wrapper">
           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1991.8386332742007!2d30.380281951797432!3d60.050902659910506!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x469634a8cc5ee003%3A0x8fc850f9b6c0d3c8!2z0L_RgC4g0JrRg9C70YzRgtGD0YDRiywgMzEg0LrQvtGA0L_Rg9GBIDEsINCh0LDQvdC60YIt0J_QtdGC0LXRgNCx0YPRgNCzLCAxOTUyNzY!5e0!3m2!1sru!2sru!4v1648322510443!5m2!1sru!2sru" width="600" height="450" style="border:0;" centerMode="true" allowfullscreen="" loading="lazy"></iframe>
@@ -446,7 +505,7 @@
             <li class="map__class">
               <span class="map__address">Пр. Культуры, д. 31, к.1</span>
               <span class="map__worktime">С 12:30 до 19:00 по будням</span>
-              <button>План входа <svg viewBox="0 0 12 8" fill="none">
+              <button class="entry-plan-btn">План входа <svg viewBox="0 0 12 8" fill="none">
               <path
                 d="m1 1.5 5 5 5-5"
                 stroke="#2B8E53"
@@ -459,7 +518,7 @@
             <li class="map__class">
               <span class="map__address">Ул. Ушинского, д. 5, к.1</span>
               <span class="map__worktime">С 12:30 до 19:30 по будням</span>
-              <button>План входа <svg viewBox="0 0 12 8" fill="none">
+              <button class="entry-plan-btn">План входа <svg viewBox="0 0 12 8" fill="none">
               <path
                 d="m1 1.5 5 5 5-5"
                 stroke="#2B8E53"
@@ -480,8 +539,8 @@
         <form action="POST" class="form contact__form">
           <h3 class="form__title">Оставьте свои контактные данные</h3>
 
-          <label class="form__label"><input class="form__input" type="text" placeholder="Имя"></label>
-          <label class="form__label"><input class="form__input" type="text" placeholder="Телефон"></label>
+          <label class="form__label"><input class="form__input name" type="text" placeholder="Имя"></label>
+          <label class="form__label"><input class="form__input phone" type="text" placeholder="Телефон"></label>
           
 
           <div class="form__policy">
@@ -490,7 +549,7 @@
             <span>Я согласен <a href="#">с политикой конфиденциальности</a></span>
           </div>
 
-          <button class="btn --callback">Отправить заявку</button>
+          <button class="btn --callback form__btn">Отправить заявку</button>
         </form>
       </div>
     </section>

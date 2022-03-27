@@ -20,6 +20,7 @@ a
   width: 100%
   padding: 0 16px
 
+// btn
 .btn 
   max-width: 190px
   width: 100%
@@ -48,7 +49,7 @@ a
     color: $color-light
     
   
-
+// section
 .section 
   padding: 150px 0
   &__title 
@@ -65,5 +66,41 @@ a
   &__dsc 
     @include font(16, 20.8, 400)
     color: $color-secondary
+
+// hidden addresses 
+.address-hidden 
+  z-index: 20 
+
+  position: absolute
+  top: calc(100% + 5px)
+  left: 0
+
+  padding: 20px
+  min-width: 230px
+  display: none 
+  flex-direction: column
+
+  background-color: $color-light
+  border-radius: 10px
+  filter: drop-shadow(5px 10px 30px rgba(0, 0, 0, 0.1))
+
+  cursor: default
+  &-btn 
+    position: relative
+
+    user-select: none
+  a
+    font-weight: 400 !important
+    color: $color-secondary
+
+    cursor: pointer
+    transition: 0.4s
+    @media screen and (min-width: 768px) 
+      &:hover 
+        color: $color-primary
+        font-weight: 700 !important
+    &:not(:last-of-type)
+      margin-bottom: 10px
+
 
   
